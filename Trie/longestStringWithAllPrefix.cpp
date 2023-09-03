@@ -64,8 +64,6 @@ public:
 
 string completeString(int n, vector<string> &a) {
     Trie trie;
-    int n=6;
-    vector<string> &a = {"n", "ni", "nin", "ninj", "ninga", "ninja"};
     for(auto &it: a) {
         trie.insert(it);
     }
@@ -77,11 +75,27 @@ string completeString(int n, vector<string> &a) {
             if(it.length() > longest.length()) {
                 longest = it;
             }
-            else if(it.length() == longest.length() it < longest) {
+            else if(it.length() == longest.length() && it < longest) {
                 longest = it;
             }
         }
     }
 
     if(longest == "") return "None";
+}
+
+int main() {
+    cout << "Testing the code" << endl;
+    int n;
+    vector<string> a;
+    cin >> n;
+    for(int i=0; i<n; i++) {
+        string tem;
+        cin >> tem;
+        a.push_back(tem);
+    }
+
+    string result = completeString(n, a);
+    cout << "Result is: " << result << endl;
+    return 0;
 }
