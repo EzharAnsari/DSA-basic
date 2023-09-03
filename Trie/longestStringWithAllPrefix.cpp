@@ -82,6 +82,7 @@ string completeString(int n, vector<string> &a) {
     }
 
     if(longest == "") return "None";
+    return longest;
 }
 
 int main() {
